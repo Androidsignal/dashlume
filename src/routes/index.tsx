@@ -15,6 +15,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { assetUrl } from "@/lib/asset";
 import logo from "@/assets/dashlume-logo.png.asset.json";
 import shotSignIn from "@/assets/home.png.asset.json";
 import shotHome from "@/assets/home-1.png.asset.json";
@@ -132,14 +133,14 @@ const fixes = [
 ];
 
 const overviewScreens = [
-  { src: shotLobby.url, title: "Lobby", caption: "Check camera and mic before you walk in." },
-  { src: shotSignIn.url, title: "Sign in", caption: "Email or Google, straight into your workspace." },
-  { src: shotHome.url, title: "Home", caption: "Create a meeting or join with a code." },
-  { src: shotCall.url, title: "In call", caption: "Full-bleed video with quick controls." },
-  { src: shotGrid.url, title: "Multi-party", caption: "Stacked participant tiles with host badges." },
-  { src: shotChat.url, title: "AI in chat", caption: "Mention the assistant and get an answer in the thread." },
-  { src: shotSummary.url, title: "Recap", caption: "Summary, action items and full transcript — saved automatically." },
-  { src: shotProfile.url, title: "Profile", caption: "Manage your account details in a tap." },
+  { src: assetUrl(shotLobby), title: "Lobby", caption: "Check camera and mic before you walk in." },
+  { src: assetUrl(shotSignIn), title: "Sign in", caption: "Email or Google, straight into your workspace." },
+  { src: assetUrl(shotHome), title: "Home", caption: "Create a meeting or join with a code." },
+  { src: assetUrl(shotCall), title: "In call", caption: "Full-bleed video with quick controls." },
+  { src: assetUrl(shotGrid), title: "Multi-party", caption: "Stacked participant tiles with host badges." },
+  { src: assetUrl(shotChat), title: "AI in chat", caption: "Mention the assistant and get an answer in the thread." },
+  { src: assetUrl(shotSummary), title: "Recap", caption: "Summary, action items and full transcript — saved automatically." },
+  { src: assetUrl(shotProfile), title: "Profile", caption: "Manage your account details in a tap." },
 ];
 
 function OverviewSlideshow() {
@@ -198,7 +199,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-2.5">
-            <img src={logo.url} alt="DashLume logo" className="h-11 w-11" />
+            <img src={assetUrl(logo)} alt="DashLume logo" className="h-11 w-11" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-lg font-bold tracking-tight">DashLume</span>
               <span className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
@@ -276,7 +277,7 @@ function Index() {
                 style={{ background: "var(--gradient-primary)", opacity: 0.35 }}
               />
               <img
-                src={shotCall.url}
+                src={assetUrl(shotCall)}
                 alt="DashLume in a two-person video call with live transcription running"
                 loading="eager"
                 className="animate-float w-[280px] rounded-[2.2rem] border border-border shadow-[var(--shadow-elegant)]"
@@ -372,14 +373,14 @@ function Index() {
             </p>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { src: shotSignIn.url, title: "Sign in", body: "Email or Google, straight into your workspace." },
-                { src: shotHome.url, title: "Home", body: "Create a meeting or join with a code." },
-                { src: shotLobby.url, title: "Lobby", body: "Check camera and mic before you walk in." },
-                { src: shotCall.url, title: "In call", body: "Full-bleed video with quick controls." },
-                { src: shotGrid.url, title: "Multi-party", body: "Stacked participant tiles with host badges." },
-                { src: shotChat.url, title: "AI in chat", body: "Mention the assistant and get an answer in the thread." },
-                { src: shotSummary.url, title: "Recap", body: "Summary, action items and full transcript." },
-                { src: shotProfile.url, title: "Profile", body: "Manage your account details in a tap." },
+                { src: assetUrl(shotSignIn), title: "Sign in", body: "Email or Google, straight into your workspace." },
+                { src: assetUrl(shotHome), title: "Home", body: "Create a meeting or join with a code." },
+                { src: assetUrl(shotLobby), title: "Lobby", body: "Check camera and mic before you walk in." },
+                { src: assetUrl(shotCall), title: "In call", body: "Full-bleed video with quick controls." },
+                { src: assetUrl(shotGrid), title: "Multi-party", body: "Stacked participant tiles with host badges." },
+                { src: assetUrl(shotChat), title: "AI in chat", body: "Mention the assistant and get an answer in the thread." },
+                { src: assetUrl(shotSummary), title: "Recap", body: "Summary, action items and full transcript." },
+                { src: assetUrl(shotProfile), title: "Profile", body: "Manage your account details in a tap." },
               ].map((s) => (
                 <figure key={s.title} className="surface-card card-lift overflow-hidden p-6 hover:-translate-y-1.5">
                   <img
@@ -457,7 +458,7 @@ function Index() {
         {/* CTA */}
         <section id="cta" className="px-6 pb-28">
           <div className="hero-glow mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-border px-8 py-20 text-center">
-            <img src={logo.url} alt="" aria-hidden="true" className="animate-float mx-auto h-20 w-20" />
+            <img src={assetUrl(logo)} alt="" aria-hidden="true" className="animate-float mx-auto h-20 w-20" />
             <h2 className="mt-8 font-display text-4xl font-bold md:text-5xl">
               Stop taking notes in your own meetings.
             </h2>
@@ -479,7 +480,7 @@ function Index() {
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-2.5">
-            <img src={logo.url} alt="" aria-hidden="true" className="h-9 w-9" />
+            <img src={assetUrl(logo)} alt="" aria-hidden="true" className="h-9 w-9" />
             <span className="flex flex-col leading-none">
               <span className="font-display font-semibold text-foreground">DashLume</span>
               <span className="mt-0.5 text-[9px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
