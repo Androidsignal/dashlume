@@ -1,7 +1,9 @@
 // Prefixes asset URLs with an optional base path so the site also works when it
 // is served from a sub-path (e.g. GitHub Pages at /<repo>/). On Lovable
-// VITE_ASSET_BASE is unset and the URL is returned unchanged.
-const ASSET_BASE = (import.meta.env["VITE_ASSET_BASE"] ?? "").replace(/\/$/, "");
+// __ASSET_BASE__ is replaced with "" and the URL is returned unchanged.
+declare const __ASSET_BASE__: string | undefined;
+
+const ASSET_BASE = (typeof __ASSET_BASE__ === "string" ? __ASSET_BASE__ : "").replace(/\/$/, "");
 
 export function withBase(path: string): string {
   return `${ASSET_BASE}${path}`;
